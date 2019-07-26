@@ -132,12 +132,17 @@ session: session oopForString: aString
 	| utf8 |
 	utf8 := aString asUtf8String.
 	self critical: [
+		| oop |
 		self gciSetSessionId: session.
-		^self 
+		oop := self 
 			gciNewUtf8String_: utf8
 			_: utf8 size 
-			_: false
+			_: false.
+		Transcript show: '
+gciNewUtf8String_() ==> ' , oop printString.
+		^oop
 	].
+
 !
 
 specialFromOop: anOop

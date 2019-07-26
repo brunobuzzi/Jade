@@ -3406,11 +3406,7 @@ variablesMenuStrings
 !
 
 viewActivated
-
-	Transcript cr; show: 'viewActivated'.
-
-	"self update."
-! !
+	"delete me!!"! !
 !JadeSystemBrowserPresenter categoriesFor: #aboutToChange:!event handlers!public! !
 !JadeSystemBrowserPresenter categoriesFor: #aboutToEditClassLabel:accept:!event handlers!public! !
 !JadeSystemBrowserPresenter categoriesFor: #addClassCategoryInfoTo:!public!request string! !

@@ -53,9 +53,16 @@ executeString: aString fromContext: anObject environment: anInteger
 	] on: CompileWarning do: [:ex | 
 		ex resume.
 	].
+!
+
+test48217: aString
+
+	(Delay forMilliseconds: 100) wait.
+	^aString class name asString
 ! !
 !JadeServer64bit34 categoriesFor: #_environmentSuperClassFor:!private!System Browser! !
 !JadeServer64bit34 categoriesFor: #classOrganizer!private! !
 !JadeServer64bit34 categoriesFor: #debugString:fromContext:environment:!public! !
 !JadeServer64bit34 categoriesFor: #executeString:fromContext:environment:!public! !
+!JadeServer64bit34 categoriesFor: #test48217:!private! !
 

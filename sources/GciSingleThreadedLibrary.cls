@@ -588,8 +588,13 @@ session: session oopForInteger: anInteger
 session: session oopForString: aString
 
 	self critical: [
+		| oop |
 		self gciSetSessionId: session.
-		^self gciNewString: aString.
+		oop := self gciNewString: aString.
+		Transcript show: '
+oopForString: aSring ==> ' , oop printString.
+		Processor yield.
+		^oop
 	].
 !
 
@@ -598,6 +603,8 @@ session: anInteger releaseOops: anArray
 	self critical: [
 		self gciSetSessionId: anInteger.
 		self _releaseOops: anArray.
+		Transcript show: '
+releaseOops: ' , anArray printString.
 	].
 !
 
@@ -618,6 +625,10 @@ session: anInteger send: aString to: anOopType with: anArray
 			_: aString 
 			_: anArray 
 			_: anArray size.
+		aString ~= 'heartbeat' ifTrue: [
+			Transcript show: '
+send: ' , aString printString , ' to: ' , anOopType printString , ' with: ' , anArray printString.
+		].
 		^self nbResult.
 	].
 !
