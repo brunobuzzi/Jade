@@ -24,6 +24,9 @@ defaultPresenterClass
 
 	self subclassResponsibility!
 
+exit
+	view close!
+
 isMethodPresenterValue
 
 	^parentPresenter isMethodPresenterValue!
@@ -48,6 +51,7 @@ updateCaption
 !JadeRewriteMethodsListShell categoriesFor: #createComponents!public! !
 !JadeRewriteMethodsListShell categoriesFor: #currentRule!public! !
 !JadeRewriteMethodsListShell categoriesFor: #defaultPresenterClass!public! !
+!JadeRewriteMethodsListShell categoriesFor: #exit!public! !
 !JadeRewriteMethodsListShell categoriesFor: #isMethodPresenterValue!public! !
 !JadeRewriteMethodsListShell categoriesFor: #model:!public! !
 !JadeRewriteMethodsListShell categoriesFor: #quoteSourceCode:!public! !
