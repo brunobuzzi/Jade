@@ -19,6 +19,7 @@ package classNames
 	add: #JadePreferencesPresenter;
 	add: #JadePreferencesShell;
 	add: #JadePropertyInspector;
+	add: #JadeSystemBrowserPreference;
 	add: #JadeTwinLevelInspector;
 	yourself.
 
@@ -125,6 +126,11 @@ JadePreferenceObject subclass: #JadeFileOutEncodingPreference
 	classInstanceVariableNames: ''!
 JadePreferenceObject subclass: #JadeMethodExplorerPreference
 	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JadePreferenceObject subclass: #JadeSystemBrowserPreference
+	instanceVariableNames: 'isKeepMethodSelectedEnabled'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!

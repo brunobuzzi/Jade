@@ -3235,9 +3235,12 @@ updateMethodList
 		].
 	].
 
-	selectedClassChanged ifTrue: [ | matchMethod |
-		matchMethod := methodListPresenter model detect: [:array | (array at: 1) = previousSelectedMethod] ifNone: [^self].
-		[methodListPresenter selection: matchMethod ifAbsent: []] forkAt: 4 .
+	JadeSystemBrowserPreference default isKeepMethodSelectedEnabled
+	ifTrue: [
+		selectedClassChanged ifTrue: [ | matchMethod |
+			matchMethod := methodListPresenter model detect: [:array | (array at: 1) = previousSelectedMethod] ifNone: [^self].
+			[methodListPresenter selection: matchMethod ifAbsent: []] forkAt: 4 .
+		]
 	]!
 
 updateMethodStepPoints
